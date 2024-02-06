@@ -22,16 +22,16 @@ with st.sidebar:
 if st.session_state['api_key']:
     payload = col1.text_area("Please input your payload here", height=600)
     request = col1.text_area("Please input your request here", height=600)
+
+    if payload and request:
+        if st.button("Submit", type='primary'):
+            generated_html = process_request(payload,
+                                             request,
+                                             api_key=st.session_state['api_key'],
+                                             model_name=st.session_state['model_name'])
+            if generated_html:
+                col2.code(generated_html)
+            else:
+                col2.write('Here will be shown generated html')
 else:
     st.info("Please enter your API Key before proceeding")
-
-if payload and request:
-    if st.button("Submit", type='primary'):
-        generated_html = process_request(payload,
-                                         request,
-                                         api_key=st.session_state['api_key'],
-                                         model_name=st.session_state['model_name'])
-        if generated_html:
-            col2.code(generated_html)
-        else:
-            col2.write('Here will be shown generated html')
