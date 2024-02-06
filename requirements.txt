@@ -1,0 +1,8 @@
+langchain==0.0.327
+langchain-core==0.1.17
+streamlit
+streamlit-feedback
+unstructured
+jq
+openai==0.28.1
+tiktoken
