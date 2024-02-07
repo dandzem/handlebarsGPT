@@ -25,8 +25,8 @@ if st.session_state['api_key']:
 
     if payload and request:
         if st.button("Submit", type='primary'):
-            generated_html = process_request(payload,
-                                             request,
+            generated_html = process_request(request,
+                                             payload,
                                              api_key=st.session_state['api_key'],
                                              model_name=st.session_state['model_name'])
             if generated_html:
