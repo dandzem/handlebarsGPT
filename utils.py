@@ -15,7 +15,8 @@ def process_request(request, payload, api_key, model_name='gpt-3.5-turbo-0125'):
     You are professional handlebar template builder. Based on payload and request create proper html template.
     You should output only pure html without any additional comments.
     Always replace requested field with variable name from the payload.
-    Always ignore variable values and use handlebars notation for requested fields.
+    As handlebars expression always use given payload variable name.
+    Always ignore variable values and use handlebars expression for requested fields.
     Use path in payload to substitute requested fields to path in cursive braces.
     If path is not in payload then dont need to substitute.
     Payload: \n
