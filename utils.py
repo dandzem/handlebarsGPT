@@ -17,7 +17,8 @@ def process_request(request, payload, api_key, model_name='gpt-3.5-turbo-0125'):
     Always replace requested field with variable name from the payload.
     As handlebars expression always use given payload variable name.
     Always ignore variable values and use handlebars expression for requested fields.
-    Use path in payload to substitute requested fields to path in cursive braces.
+    always Use path in payload to substitute requested fields to path in cursive braces.
+    handlebar expression look like this {{{{ payloadPath }}}}.
     If path is not in payload then dont need to substitute.
     Payload: \n
     {payload}
